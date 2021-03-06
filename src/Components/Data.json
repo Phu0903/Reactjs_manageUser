@@ -1,0 +1,38 @@
+[
+    {
+        "id":1,
+        "name":"Nguyen Phu",
+        "tel":"123123124",
+        "Permission":1
+    },
+    {
+        "id":2,
+        "name":"Vu Toi ",
+        "tel":"123123124",
+        "Permission":2
+    },
+    {
+        "id":3,
+        "name":"Anh Khang 03",
+        "tel":"123123124",
+        "Permission":1
+    },
+    {
+        "id":4,
+        "name":"Vien DUy",
+        "tel":"123123124",
+        "Permission":3
+    },
+    {
+        "id":5,
+        "name":"Tuan ANh",
+        "tel":"123123124",
+        "Permission":1
+    },
+    {
+        "id":6,
+        "name":"Van Luyen",
+        "tel":"123123124",
+        "Permission":1
+    }
+]
