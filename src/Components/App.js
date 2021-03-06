@@ -54,7 +54,24 @@ class App extends Component {
     console.log(user)
   }
   getUserEditInfoforApp = (info)=>{
-    console.log('Thong tin da sua xong'+info.name);
+   
+    this.state.data.forEach((value,key) => {
+        if(value.id === info.id)
+        {
+          value.name = info.name;
+          value.tel = info.tel;
+          value.Permission = info.Permission;
+        }
+    })
+   
+  }
+
+  deleteUser = (idUser) =>{
+    var tempData = this.state.data;
+    tempData = tempData.filter(item => item.id !== idUser) // lọc id
+        this.setState({
+      data:tempData
+    })
   }
 
   render() {
@@ -81,7 +98,9 @@ class App extends Component {
               changeEditUserStatus = {() => this.changeEditUserStatus()}
               ></Search>
             
-              <TableData   changeEditUserStatus = {() => this.changeEditUserStatus()} editFun={(user)=>this.editUser(user)} DataUserProps={ketqua}> </TableData>
+              <TableData  
+              deleteUser = {(idUser)=>this.deleteUser(idUser)}
+              changeEditUserStatus = {() => this.changeEditUserStatus()} editFun={(user)=>this.editUser(user)} DataUserProps={ketqua}> </TableData>
               <AddUser add={(name,tel,Permission)=>this.getNewUserData(name,tel,Permission)}></AddUser>
              
           </div>

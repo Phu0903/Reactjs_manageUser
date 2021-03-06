@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import TableDataRow from './TableDataRow';
 
 class TableData extends Component {
+    deleteButtonClick = (idUser) =>{
+      this.props.deleteUser(idUser);
+    }
     mappingDataUser = () =>
             this.props.DataUserProps.map((value,key) =>(
                   <TableDataRow
+                  deleteButtonClick = {(idUser) => 
+                    this.deleteButtonClick(idUser)}
                   changeEditUserStatus = {() => this.props.changeEditUserStatus()}
-                  editFunClick={(user)=>this.props.editFun(value)} userName={value.name} key={key} stt={key} tel={value.tel} permission={value.Permission}></TableDataRow>
+                  editFunClick={(user)=>this.props.editFun(value)} userName={value.name} key={key} stt={key} tel={value.tel} permission={value.Permission} id={value.id}></TableDataRow>
             ))
     render() {
         //console.log(this.props.DataUserProps);
